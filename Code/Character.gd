@@ -1,4 +1,5 @@
 extends CharacterBody2D
+<<<<<<< HEAD
 
 @onready var anim = get_node("Flan/AnimatedSprite2D")
 var dir = 0 # Store the last direction outside the function
@@ -38,3 +39,5 @@ func _physics_process(delta):
 
 
 
+=======
+>>>>>>> 8e78119c29a3ca5c15d78d430216a2af98c45ebd
