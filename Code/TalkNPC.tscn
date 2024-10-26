@@ -1,0 +1,71 @@
+[gd_scene load_steps=10 format=3 uid="uid://c4y8to0c5e1r4"]
+
+[ext_resource type="Texture2D" uid="uid://uoi42k774g0c" path="res://Res/Character/Voido1.png" id="1_6o7ik"]
+[ext_resource type="Texture2D" uid="uid://dha8k070gofn6" path="res://Res/Enemy/boy_left_1.png" id="3_32l05"]
+[ext_resource type="Texture2D" uid="uid://bbh5erx57e2y4" path="res://Res/Enemy/boy_left_2.png" id="4_iq08y"]
+[ext_resource type="Texture2D" uid="uid://ddg6js678dnd0" path="res://Res/Enemy/boy_right_1.png" id="5_0bhy2"]
+[ext_resource type="Texture2D" uid="uid://nd2jut4ykegb" path="res://Res/Enemy/boy_right_2.png" id="6_bhlur"]
+[ext_resource type="Texture2D" uid="uid://c2yj0c2bbfxsg" path="res://Res/Enemy/boy_up_1.png" id="7_sr3i2"]
+[ext_resource type="Texture2D" uid="uid://cktg0ekpgduhj" path="res://Res/Enemy/boy_up_2.png" id="8_5v5sd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_em3fx"]
+radius = 7.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7n25o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_6o7ik")
+}],
+"loop": true,
+"name": &"Walk_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_32l05")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_iq08y")
+}],
+"loop": true,
+"name": &"Walk_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_0bhy2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_bhlur")
+}],
+"loop": true,
+"name": &"Walk_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_sr3i2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_5v5sd")
+}],
+"loop": true,
+"name": &"Walk_up",
+"speed": 5.0
+}]
+
+[node name="Talk_NPC" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_em3fx")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="NPC" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="NPC"]
+position = Vector2(-2, 3.75)
+scale = Vector2(0.90625, 0.911765)
+sprite_frames = SubResource("SpriteFrames_7n25o")
+animation = &"Walk_down"

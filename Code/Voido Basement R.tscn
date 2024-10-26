@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://c1ojf5l2nvejf"]
+
+[ext_resource type="PackedScene" uid="uid://oqglu25d2xj0" path="res://character.tscn" id="1_kpdio"]
+[ext_resource type="Texture2D" uid="uid://cpaehkr0cgrke" path="res://Res/Map/map.png" id="1_puf3m"]
+[ext_resource type="PackedScene" uid="uid://cqdmuviah7wr6" path="res://Tree.tscn" id="3_xsaae"]
+[ext_resource type="PackedScene" uid="uid://sha7858jkjbf" path="res://enemy.tscn" id="4_ndex0"]
+
+[node name="Game" type="Node2D"]
+position = Vector2(960, 541)
+
+[node name="Character" parent="." instance=ExtResource("1_kpdio")]
+y_sort_enabled = true
+position = Vector2(-298, -245)
+scale = Vector2(2.25594, 2.25185)
+
+[node name="Pintree3" parent="." instance=ExtResource("3_xsaae")]
+position = Vector2(-399, -312)
+scale = Vector2(0.446888, 0.422814)
+
+[node name="Pintree2" parent="." instance=ExtResource("3_xsaae")]
+position = Vector2(-255, -281)
+scale = Vector2(0.420952, 0.379259)
+
+[node name="Pintree" parent="." instance=ExtResource("3_xsaae")]
+position = Vector2(-356, -128)
+scale = Vector2(0.462467, 0.428711)
+
+[node name="Enemy" parent="." instance=ExtResource("4_ndex0")]
+position = Vector2(-431, -207)
+scale = Vector2(4.01107, 3.90375)
+
+[node name="Map" type="Sprite2D" parent="."]
+show_behind_parent = true
+y_sort_enabled = true
+texture = ExtResource("1_puf3m")

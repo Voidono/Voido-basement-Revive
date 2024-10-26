@@ -1,0 +1,116 @@
+[gd_scene load_steps=12 format=3 uid="uid://df3k38d77aa80"]
+
+[ext_resource type="Texture2D" uid="uid://b3sfl6gwtik1h" path="res://Res/Enemy/boy_down_1.png" id="2_vs4yr"]
+[ext_resource type="Script" path="res://CharacterBody2D.gd" id="2_vv8v2"]
+[ext_resource type="Texture2D" uid="uid://talftiej2jne" path="res://Res/Enemy/boy_down_2.png" id="4_23v4e"]
+[ext_resource type="Texture2D" uid="uid://dha8k070gofn6" path="res://Res/Enemy/boy_left_1.png" id="5_t1wp3"]
+[ext_resource type="Texture2D" uid="uid://bbh5erx57e2y4" path="res://Res/Enemy/boy_left_2.png" id="6_t68h8"]
+[ext_resource type="Texture2D" uid="uid://ddg6js678dnd0" path="res://Res/Enemy/boy_right_1.png" id="7_tb0j4"]
+[ext_resource type="Texture2D" uid="uid://nd2jut4ykegb" path="res://Res/Enemy/boy_right_2.png" id="8_wr318"]
+[ext_resource type="Texture2D" uid="uid://c2yj0c2bbfxsg" path="res://Res/Enemy/boy_up_1.png" id="9_fc8nf"]
+[ext_resource type="Texture2D" uid="uid://cktg0ekpgduhj" path="res://Res/Enemy/boy_up_2.png" id="10_clhv6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_14j4l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vs4yr")
+}],
+"loop": true,
+"name": &"Idle_Down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_t1wp3")
+}],
+"loop": true,
+"name": &"Idle_Left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_tb0j4")
+}],
+"loop": true,
+"name": &"Idle_Right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_fc8nf")
+}],
+"loop": true,
+"name": &"Idle_Up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vs4yr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_23v4e")
+}],
+"loop": true,
+"name": &"Move_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_t1wp3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_t68h8")
+}],
+"loop": true,
+"name": &"Move_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_tb0j4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_wr318")
+}],
+"loop": true,
+"name": &"Move_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_fc8nf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_clhv6")
+}],
+"loop": true,
+"name": &"Move_up",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1mdlo"]
+radius = 17.4642
+
+[node name="Combat" type="Node2D"]
+
+[node name="Combat_box" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 398.0
+offset_bottom = 208.0
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("2_vv8v2")
+
+[node name="Combat_player" type="Node2D" parent="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D/Combat_player"]
+position = Vector2(82, 65)
+scale = Vector2(3.01124, 2.25941)
+sprite_frames = SubResource("SpriteFrames_14j4l")
+animation = &"Idle_Up"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(81, 65)
+shape = SubResource("CircleShape2D_1mdlo")
