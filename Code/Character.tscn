@@ -1,0 +1,144 @@
+[gd_scene load_steps=22 format=3 uid="uid://byjo10yl8fd8y"]
+
+[ext_resource type="Script" uid="uid://clil83ogjn1pe" path="res://Character.gd" id="1_tysx3"]
+[ext_resource type="Texture2D" uid="uid://b5nyyd4kqngp6" path="res://Res/Character/Flandre_idle_down_1.png" id="2_jaoor"]
+[ext_resource type="Texture2D" uid="uid://ggmmbrnx75" path="res://Res/Character/Flandre_idle_down_2.png" id="3_4knoa"]
+[ext_resource type="Texture2D" uid="uid://y5jlb4etlcvw" path="res://Res/Character/Flandre_idle_left_1.png" id="4_ypk5n"]
+[ext_resource type="Texture2D" uid="uid://dyvd4xbcl18b5" path="res://Res/Character/Flandre_idle_left_2.png" id="5_1drtw"]
+[ext_resource type="Texture2D" uid="uid://b2etncvufwugl" path="res://Res/Character/Flandre_idle_right_1.png" id="6_ki3sx"]
+[ext_resource type="Texture2D" uid="uid://de5rk1m85cwfb" path="res://Res/Character/Flandre_idle_right_2.png" id="7_xewob"]
+[ext_resource type="Texture2D" uid="uid://cexyi0ib5rw7w" path="res://Res/Character/Flandre_idle_up_1.png" id="8_6vf2h"]
+[ext_resource type="Texture2D" uid="uid://5lm1f260luns" path="res://Res/Character/Flandre_idle_up_2.png" id="9_4r2vl"]
+[ext_resource type="Texture2D" uid="uid://cmidgvaowrqx8" path="res://Res/Character/Flandre_down_1.png" id="10_xvnxy"]
+[ext_resource type="Texture2D" uid="uid://dtwpxs8v3u5pj" path="res://Res/Character/Flandre_down_2.png" id="11_u4rwe"]
+[ext_resource type="Texture2D" uid="uid://3v2wajmve4l4" path="res://Res/Character/Flandre_left_1.png" id="12_7akkm"]
+[ext_resource type="Texture2D" uid="uid://cjey0t1cnbdyx" path="res://Res/Character/Flandre_left_2.png" id="13_us4fo"]
+[ext_resource type="Texture2D" uid="uid://ptgg0tvwbyiv" path="res://Res/Character/Flandre_right_1.png" id="14_oto6a"]
+[ext_resource type="Texture2D" uid="uid://der8eqcgcktmi" path="res://Res/Character/Flandre_right_2.png" id="15_1qm7e"]
+[ext_resource type="Texture2D" uid="uid://byff8f7ufyl5o" path="res://Res/Character/Flandre_up_1.png" id="16_aiih5"]
+[ext_resource type="Texture2D" uid="uid://brmmbprgiukho" path="res://Res/Character/Flandre_up_2.png" id="17_0pkhf"]
+[ext_resource type="PackedScene" uid="uid://b7fgcdtw43enl" path="res://Joystick.tscn" id="18_4ewv7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_odr31"]
+radius = 14.1421
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_83ej2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_jaoor")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_4knoa")
+}],
+"loop": true,
+"name": &"Idle_Down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ypk5n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_1drtw")
+}],
+"loop": true,
+"name": &"Idle_Left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_ki3sx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_xewob")
+}],
+"loop": true,
+"name": &"Idle_Right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_6vf2h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_4r2vl")
+}],
+"loop": true,
+"name": &"Idle_Up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_xvnxy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_u4rwe")
+}],
+"loop": true,
+"name": &"Walk_Down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_7akkm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_us4fo")
+}],
+"loop": true,
+"name": &"Walk_Left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_oto6a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_1qm7e")
+}],
+"loop": true,
+"name": &"Walk_Right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_aiih5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_0pkhf")
+}],
+"loop": true,
+"name": &"Walk_Up",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7d750"]
+radius = 25.0
+
+[node name="Character" type="CharacterBody2D"]
+script = ExtResource("1_tysx3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_odr31")
+
+[node name="Flan" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Flan"]
+sprite_frames = SubResource("SpriteFrames_83ej2")
+animation = &"Walk_Down"
+
+[node name="DetectionArea" type="Area2D" parent="Flan"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flan/DetectionArea"]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_7d750")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Joystick" parent="Camera2D" instance=ExtResource("18_4ewv7")]
+position = Vector2(-291, 142)
+scale = Vector2(0.567075, 0.580898)
+
+[connection signal="body_shape_entered" from="Flan/DetectionArea" to="." method="_on_detection_area_body_shape_entered"]
+[connection signal="body_shape_exited" from="Flan/DetectionArea" to="." method="_on_detection_area_body_shape_exited"]

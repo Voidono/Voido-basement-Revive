@@ -1,0 +1,23 @@
+~ an_com
+
+if Global.given_quest_item == false:
+	Voido: [[Hi|Hello|Nihao|Konichiwa]]... Tôi có thể giúp gì cho bạn nhỉ?
+	- Bạn ăn cơm chưa?, Tôi có cái này muốn cho bạn này.
+		Voido: Thật ư?
+		- Bát tôi vừa ăn cơm xong, bạn đi rửa bát đi.
+			if Global.found_quest_item == true:
+				Voido: Ahh... ok...
+				set Global.given_quest_item = true
+				=> END
+			else: 
+				Voido: Làm gì có cái bát nào đâu?
+				Voido: Thôi cức đi.
+				=> END
+		- Ko, chôn chôn cá tháng 4 thôi => END
+	- Tạm biệt. => END
+else:
+	Voido: [[Hi|Hello|Nihao|Konichiwa]], bát rửa sạch sẽ rồi đó
+	Voido: Còn cái gì cần tôi rửa nữa không?
+	Voido: Hết thì cúc đi
+	=> END
+	

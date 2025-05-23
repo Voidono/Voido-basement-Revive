@@ -1,0 +1,319 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
+
+[ext_resource type="Script" uid="uid://bpij3a660plpy" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_rovtq"]
+
+[resource]
+script = ExtResource("1_rovtq")
+using_states = PackedStringArray()
+titles = {
+"an_com": "3"
+}
+character_names = PackedStringArray("Voido")
+first_title = "3"
+lines = {
+"1": {
+&"id": "1",
+&"next_id": "3",
+"text": "an_com",
+"type": &"title"
+},
+"10": {
+&"id": "10",
+"mutation": {
+&"expression": Array[Dictionary]([{
+&"type": &"variable",
+&"value": "Global"
+}, {
+&"type": &"dot"
+}, {
+&"type": &"variable",
+&"value": "given_quest_item"
+}, {
+&"type": &"assignment",
+&"value": "="
+}, {
+&"type": &"variable",
+&"value": "true"
+}]),
+&"is_blocking": true
+},
+&"next_id": "11",
+"parent_id": "8",
+"type": &"mutation"
+},
+"11": {
+&"id": "11",
+"is_snippet": false,
+&"next_id": "end",
+"parent_id": "8",
+"type": &"goto"
+},
+"12": {
+&"id": "12",
+"next_conditional_id": "end!",
+&"next_id": "13",
+"next_id_after": "end!",
+"parent_id": "7",
+"type": &"condition"
+},
+"13": {
+"character": "Voido",
+"character_replacements": Array[Dictionary]([]),
+&"id": "13",
+&"next_id": "14",
+"notes": "",
+"parent_id": "12",
+"tags": PackedStringArray(),
+"text": "Làm gì có cái bát nào đâu?",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Làm gì có cái bát nào đâu?",
+"type": &"dialogue"
+},
+"14": {
+"character": "Voido",
+"character_replacements": Array[Dictionary]([]),
+&"id": "14",
+&"next_id": "15",
+"notes": "",
+"parent_id": "12",
+"tags": PackedStringArray(),
+"text": "Thôi cức đi.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Thôi cức đi.",
+"type": &"dialogue"
+},
+"15": {
+&"id": "15",
+"is_snippet": false,
+&"next_id": "end",
+"parent_id": "12",
+"type": &"goto"
+},
+"16": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+&"id": "16",
+&"next_id": "end",
+"next_id_after": "end!",
+"notes": "",
+"parent_id": "5",
+"tags": PackedStringArray(),
+"text": "Ko, chôn chôn cá tháng 4 thôi",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Ko, chôn chôn cá tháng 4 thôi",
+"type": &"response"
+},
+"17": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+&"id": "17",
+&"next_id": "end",
+"next_id_after": "end!",
+"notes": "",
+"parent_id": "3",
+"tags": PackedStringArray(),
+"text": "Tạm biệt.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Tạm biệt.",
+"type": &"response"
+},
+"18": {
+&"id": "18",
+"next_conditional_id": "end!",
+&"next_id": "19",
+"next_id_after": "end!",
+"type": &"condition"
+},
+"19": {
+"character": "Voido",
+"character_replacements": Array[Dictionary]([]),
+&"id": "19",
+&"next_id": "20",
+"notes": "",
+"parent_id": "18",
+"tags": PackedStringArray(),
+"text": "[[Hi|Hello|Nihao|Konichiwa]], bát rửa sạch sẽ rồi đó",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "[[Hi|Hello|Nihao|Konichiwa]], bát rửa sạch sẽ rồi đó",
+"type": &"dialogue"
+},
+"20": {
+"character": "Voido",
+"character_replacements": Array[Dictionary]([]),
+&"id": "20",
+&"next_id": "21",
+"notes": "",
+"parent_id": "18",
+"tags": PackedStringArray(),
+"text": "Còn cái gì cần tôi rửa nữa không?",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Còn cái gì cần tôi rửa nữa không?",
+"type": &"dialogue"
+},
+"21": {
+"character": "Voido",
+"character_replacements": Array[Dictionary]([]),
+&"id": "21",
+&"next_id": "22",
+"notes": "",
+"parent_id": "18",
+"tags": PackedStringArray(),
+"text": "Hết thì cúc đi",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Hết thì cúc đi",
+"type": &"dialogue"
+},
+"22": {
+&"id": "22",
+"is_snippet": false,
+&"next_id": "end",
+"parent_id": "18",
+"type": &"goto"
+},
+"3": {
+"condition": {
+&"expression": Array[Dictionary]([{
+&"type": &"variable",
+&"value": "Global"
+}, {
+&"type": &"dot"
+}, {
+&"type": &"variable",
+&"value": "given_quest_item"
+}, {
+&"type": &"comparison",
+&"value": "=="
+}, {
+&"type": &"variable",
+&"value": "false"
+}, {
+&"type": &"colon"
+}])
+},
+&"id": "3",
+"next_conditional_id": "18",
+&"next_id": "4",
+"next_id_after": "end!",
+"type": &"condition"
+},
+"4": {
+"character": "Voido",
+"character_replacements": Array[Dictionary]([]),
+&"id": "4",
+&"next_id": "5",
+"notes": "",
+"parent_id": "3",
+"tags": PackedStringArray(),
+"text": "[[Hi|Hello|Nihao|Konichiwa]]... Tôi có thể giúp gì cho bạn nhỉ?",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "[[Hi|Hello|Nihao|Konichiwa]]... Tôi có thể giúp gì cho bạn nhỉ?",
+"type": &"dialogue"
+},
+"5": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+&"id": "5",
+&"next_id": "6",
+"next_id_after": "end!",
+"notes": "",
+"parent_id": "3",
+"responses": PackedStringArray("5", "17"),
+"tags": PackedStringArray(),
+"text": "Bạn ăn cơm chưa?, Tôi có cái này muốn cho bạn này.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Bạn ăn cơm chưa?, Tôi có cái này muốn cho bạn này.",
+"type": &"response"
+},
+"6": {
+"character": "Voido",
+"character_replacements": Array[Dictionary]([]),
+&"id": "6",
+&"next_id": "7",
+"notes": "",
+"parent_id": "5",
+"tags": PackedStringArray(),
+"text": "Thật ư?",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Thật ư?",
+"type": &"dialogue"
+},
+"7": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+&"id": "7",
+&"next_id": "8",
+"next_id_after": "end!",
+"notes": "",
+"parent_id": "5",
+"responses": PackedStringArray("7", "16"),
+"tags": PackedStringArray(),
+"text": "Bát tôi vừa ăn cơm xong, bạn đi rửa bát đi.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Bát tôi vừa ăn cơm xong, bạn đi rửa bát đi.",
+"type": &"response"
+},
+"8": {
+"condition": {
+&"expression": Array[Dictionary]([{
+&"type": &"variable",
+&"value": "Global"
+}, {
+&"type": &"dot"
+}, {
+&"type": &"variable",
+&"value": "found_quest_item"
+}, {
+&"type": &"comparison",
+&"value": "=="
+}, {
+&"type": &"variable",
+&"value": "true"
+}, {
+&"type": &"colon"
+}])
+},
+&"id": "8",
+"next_conditional_id": "12",
+&"next_id": "9",
+"next_id_after": "end!",
+"parent_id": "7",
+"type": &"condition"
+},
+"9": {
+"character": "Voido",
+"character_replacements": Array[Dictionary]([]),
+&"id": "9",
+&"next_id": "10",
+"notes": "",
+"parent_id": "8",
+"tags": PackedStringArray(),
+"text": "Ahh... ok...",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Ahh... ok...",
+"type": &"dialogue"
+}
+}
+raw_text = "~ an_com
+
+if Global.given_quest_item == false:
+	Voido: [[Hi|Hello|Nihao|Konichiwa]]... Tôi có thể giúp gì cho bạn nhỉ?
+	- Bạn ăn cơm chưa?, Tôi có cái này muốn cho bạn này.
+		Voido: Thật ư?
+		- Bát tôi vừa ăn cơm xong, bạn đi rửa bát đi.
+			if Global.found_quest_item == true:
+				Voido: Ahh... ok...
+				set Global.given_quest_item = true
+				=> END
+			else: 
+				Voido: Làm gì có cái bát nào đâu?
+				Voido: Thôi cức đi.
+				=> END
+		- Ko, chôn chôn cá tháng 4 thôi => END
+	- Tạm biệt. => END
+else:
+	Voido: [[Hi|Hello|Nihao|Konichiwa]], bát rửa sạch sẽ rồi đó
+	Voido: Còn cái gì cần tôi rửa nữa không?
+	Voido: Hết thì cúc đi
+	=> END
+	"
+metadata/dialogue_manager_version = "2.42.2"

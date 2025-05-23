@@ -1,0 +1,73 @@
+[gd_scene load_steps=12 format=3 uid="uid://sha7858jkjbf"]
+
+[ext_resource type="Script" uid="uid://cbd6kgkvqm5ak" path="res://Enemy.gd" id="1_b8pwl"]
+[ext_resource type="Texture2D" uid="uid://b3sfl6gwtik1h" path="res://Res/Enemy/boy_down_1.png" id="2_60hah"]
+[ext_resource type="Texture2D" uid="uid://talftiej2jne" path="res://Res/Enemy/boy_down_2.png" id="3_jqnjm"]
+[ext_resource type="Texture2D" uid="uid://dha8k070gofn6" path="res://Res/Enemy/boy_left_1.png" id="4_rye0r"]
+[ext_resource type="Texture2D" uid="uid://bbh5erx57e2y4" path="res://Res/Enemy/boy_left_2.png" id="5_f44ho"]
+[ext_resource type="Texture2D" uid="uid://ddg6js678dnd0" path="res://Res/Enemy/boy_right_1.png" id="6_yu04x"]
+[ext_resource type="Texture2D" uid="uid://nd2jut4ykegb" path="res://Res/Enemy/boy_right_2.png" id="7_ut8dk"]
+[ext_resource type="Texture2D" uid="uid://c2yj0c2bbfxsg" path="res://Res/Enemy/boy_up_1.png" id="8_lscwd"]
+[ext_resource type="Texture2D" uid="uid://cktg0ekpgduhj" path="res://Res/Enemy/boy_up_2.png" id="9_lmp17"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0twp0"]
+radius = 7.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a3trd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_60hah")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jqnjm")
+}],
+"loop": true,
+"name": &"Move_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_rye0r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_f44ho")
+}],
+"loop": true,
+"name": &"Move_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_yu04x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ut8dk")
+}],
+"loop": true,
+"name": &"Move_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_lscwd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_lmp17")
+}],
+"loop": true,
+"name": &"Move_up",
+"speed": 5.0
+}]
+
+[node name="Enemy" type="CharacterBody2D"]
+script = ExtResource("1_b8pwl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_0twp0")
+
+[node name="Doraemon" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Doraemon"]
+sprite_frames = SubResource("SpriteFrames_a3trd")
+animation = &"Move_down"

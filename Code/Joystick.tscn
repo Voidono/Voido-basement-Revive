@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://b7fgcdtw43enl"]
+
+[ext_resource type="Texture2D" uid="uid://dhmehnxo45rgp" path="res://Res/Movement/ControllerPosition.png" id="1_d0t0r"]
+[ext_resource type="Script" uid="uid://jdv42vhgh63n" path="res://Joystick.gd" id="1_rp70s"]
+[ext_resource type="Script" uid="uid://cwlp0oqtnkh4v" path="res://ControllerPosition.gd" id="2_opyge"]
+[ext_resource type="Texture2D" uid="uid://kuhu03jnq8vn" path="res://Res/Movement/ControllerRadius.png" id="2_tudsy"]
+[ext_resource type="Script" uid="uid://bjkhy31swtd0t" path="res://Button.gd" id="4_vqbik"]
+
+[node name="Joystick" type="Node2D"]
+position = Vector2(162, 153)
+script = ExtResource("1_rp70s")
+
+[node name="ControllerPosition" type="Sprite2D" parent="."]
+texture = ExtResource("1_d0t0r")
+script = ExtResource("2_opyge")
+
+[node name="ControllerRadius" type="Sprite2D" parent="."]
+modulate = Color(0.960784, 1, 1, 0.192157)
+position = Vector2(0, -1)
+texture = ExtResource("2_tudsy")
+
+[node name="Button" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = -101.0
+offset_top = -96.0
+offset_right = -93.0
+offset_bottom = -88.0
+scale = Vector2(25.5574, 25.0725)
+script = ExtResource("4_vqbik")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="button_down" from="Button" to="ControllerPosition" method="_on_button_button_down"]
+[connection signal="button_up" from="Button" to="ControllerPosition" method="_on_button_button_up"]
